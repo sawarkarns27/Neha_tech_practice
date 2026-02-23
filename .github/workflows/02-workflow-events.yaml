@@ -1,0 +1,27 @@
+name : 02 - Workflow Events
+on :
+    push :
+        jobs :
+            echo_push : 
+                runs_on : ubuntu-latest
+                steps :
+                - name : push trigger       
+                  run : "echo Hey run on push event"  
+    pull_request : 
+        jobs :
+            echo_pull_request :
+                runs-on : ubuntu-latest
+                steps :
+                    - name : pull request trigger
+                      run : "echo pull request trigger"
+    schedule :
+        cron : /5 * * * * *
+        jobs :  
+            cron_trigger : 
+                runs_on : ubuntu-latest
+                steps :
+                    - name : cron scheduler trigger
+                      run : "echo cron runs on every 5 seconds"
+
+
+
