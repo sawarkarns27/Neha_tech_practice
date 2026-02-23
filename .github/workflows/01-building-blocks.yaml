@@ -2,13 +2,12 @@ name: 01 - Building Blocks
 on : push
 
 jobs : 
+  runs_on : ubuntu-latest
   echo-hello : 
-    runs_on : ubuntu-latest
     steps :
       name : "Say hello"
       run : echo "Hello, World!"
   echo-goodbye : 
-    runs_on : ubuntu-latest
     steps : 
       - name : "Failed step"
         run : echo "I will fail"
