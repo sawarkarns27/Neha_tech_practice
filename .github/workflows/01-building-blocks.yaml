@@ -1,8 +1,8 @@
 name: 01 - Building Blocks
 on : push
+runs_on : "ubuntu-latest"
 
 jobs : 
-  #runs_on : "ubuntu-latest"
   echo-hello : 
     steps :
       name : "Say hello"
