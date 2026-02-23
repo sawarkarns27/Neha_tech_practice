@@ -2,7 +2,7 @@ name: 01 - Building Blocks
 on : push
 
 jobs : 
-  runs_on : "ubuntu-latest"
+  #runs_on : "ubuntu-latest"
   echo-hello : 
     steps :
       name : "Say hello"
