@@ -8,7 +8,7 @@ jobs :
       - name : "Say hello"
         run : |
           echo "Hello, World!"
-          exit 1
+          exit 0
   echo-goodbye : 
     runs-on : self-hosted
     steps : 
