@@ -8,4 +8,7 @@ jobs :
       - name : Checkout Code
         uses : actions/checkout@v4
       - name : print list of folders/files
-        run : ls 
+        run : |
+          ls 
+          cd sample-app
+          ls
