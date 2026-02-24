@@ -9,14 +9,14 @@ jobs :
         runs-on : ubuntu-latest
         steps :
         - name : push trigger       
-          run : "echo Hey run on push event"  
-    pull_request : 
-        jobs :
-            echo_pull_request :
-                runs-on : ubuntu-latest
-                steps :
-                    - name : pull request trigger
-                      run : "echo pull request trigger : ${{github.event_name}}"
+          run : "echo Hey run on push event : ${{github.event_name}}"  
+    
+    echo_pull_request :
+        if : github.event_name == 'pull_request'
+        runs-on : ubuntu-latest
+        steps :
+            - name : pull request trigger
+              run : "echo pull request trigger : ${{github.event_name}}"
     # schedule :
     #     cron : /5 * * * * *
     #     jobs :  
