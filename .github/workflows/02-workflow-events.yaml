@@ -4,7 +4,6 @@ on :
 
 jobs :
     echo_push : 
-        if : github.event_name == 'push'
         runs_on : ubuntu-latest
         steps :
         - name : push trigger       
