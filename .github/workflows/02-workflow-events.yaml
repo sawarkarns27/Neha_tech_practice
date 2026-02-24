@@ -1,6 +1,7 @@
 name : 02 - Workflow Events
 on :
     push :
+    pull_request :
 
 jobs :
     echo_push : 
@@ -9,13 +10,13 @@ jobs :
         steps :
         - name : push trigger       
           run : "echo Hey run on push event"  
-    # pull_request : 
-    #     jobs :
-    #         echo_pull_request :
-    #             runs-on : ubuntu-latest
-    #             steps :
-    #                 - name : pull request trigger
-    #                   run : "echo pull request trigger"
+    pull_request : 
+        jobs :
+            echo_pull_request :
+                runs-on : ubuntu-latest
+                steps :
+                    - name : pull request trigger
+                      run : "echo pull request trigger : ${{github.event_name}}"
     # schedule :
     #     cron : /5 * * * * *
     #     jobs :  
