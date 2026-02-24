@@ -1,12 +1,14 @@
 name : 02 - Workflow Events
 on :
     push :
-        jobs :
-            echo_push : 
-                runs_on : ubuntu-latest
-                steps :
-                - name : push trigger       
-                  run : "echo Hey run on push event"  
+
+jobs :
+    echo_push : 
+        if : github.event_name == 'push'
+        runs_on : ubuntu-latest
+        steps :
+        - name : push trigger       
+          run : "echo Hey run on push event"  
     # pull_request : 
     #     jobs :
     #         echo_pull_request :
