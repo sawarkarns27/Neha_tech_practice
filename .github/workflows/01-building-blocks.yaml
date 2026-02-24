@@ -1,5 +1,5 @@
-# name: 01 - Building Blocks
-# on : push
+name: 01 - Building Blocks
+on : push
 
 # jobs : 
 #   echo-hello : 
