@@ -2,6 +2,8 @@ name : 02 - Workflow Events
 on :
     push :
     pull_request :
+    schedule : 
+        - cron : "* /30 * * * *"
 
 jobs :
     echo_push : 
@@ -17,14 +19,13 @@ jobs :
         steps :
             - name : pull request trigger
               run : "echo pull request trigger : ${{github.event_name}}"
-    # schedule :
-    #     cron : /5 * * * * *
-    #     jobs :  
-    #         cron_trigger : 
-    #             runs_on : ubuntu-latest
-    #             steps :
-    #                 - name : cron scheduler trigger
-    #                   run : "echo cron runs on every 5 seconds"
+
+    cron_trigger : 
+        if : github.event_name == 'schedule'
+        runs_on : ubuntu-latest
+        steps :
+            - name : cron scheduler trigger
+              run : "echo cron runs on every 5 seconds"
 
 
 
