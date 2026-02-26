@@ -1,0 +1,8 @@
+name : Cache Node and NPM Dependencies
+description : "This action allows to cache both Node and NPM dependencies based on the package-lock.json file."
+
+inputs : 
+  node-version : 20.x
+  uses : NodeJS version to use
+  defaukt : 20.x
+
