@@ -35,4 +35,4 @@ jobs :
         run : |
           echo "${{env.MY_OVERWRITTEN_VAR}}" 
           echo "${{env.MY_JOB_VAR}}" 
-          echo "${{env.MY_VAR}}" 
+          echo "${{env.MY_WORKFLOW_VAR}}" 
