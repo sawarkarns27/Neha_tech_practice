@@ -10,7 +10,9 @@ on :
 jobs : 
   build : 
     runs-on : ubuntu-latest
-    working-directory : sample-app
+    defaults :  
+      run :
+        working-directory : sample-app
     steps : 
       - name : Checkout code
         run : actions/checkout@v4
@@ -25,4 +27,6 @@ jobs :
       - name : Building
         run : "npm run build"
       - name : Deploying to nonprod
-        run : echo "Deploying to nonprod"
+        run : |
+          echo "Deploying to nonprod"
+          echo "::error:: This is sample error message"
