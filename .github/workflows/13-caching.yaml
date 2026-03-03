@@ -36,7 +36,7 @@ jobs :
           path : sample-app/node_modules
           key : deps-node-modules-${{ hashFiles('sample-app/package-lock.json') }}
       - name : Install dependencies
-        if : steps.cache.outputs.cache-hit != true
+        if : steps.cache.outputs.cache-hit != 'true'
         run : "npm install"
       - name : Testing
         run : "npm run test"
