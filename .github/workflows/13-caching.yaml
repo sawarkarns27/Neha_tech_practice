@@ -12,7 +12,7 @@ jobs :
     runs-on : ubuntu-latest
     defaults :  
       run :
-        working-directory : Neha_tech_practice/sample-app
+        working-directory : tetin
     steps : 
       - name : Checkout code
         run : actions/checkout@v4
