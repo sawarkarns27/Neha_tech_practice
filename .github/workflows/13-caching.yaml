@@ -12,10 +12,10 @@ jobs :
     runs-on : ubuntu-latest
     defaults :  
       run :
-        working-directory : tetin
+        working-directory : sample-app
     steps : 
       - name : Checkout code
-        run : actions/checkout@v4
+        uses : actions/checkout@v4
       - name : Setup Node
         uses : actions/setup-node@v3
         with : 
