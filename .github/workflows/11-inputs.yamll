@@ -1,0 +1,25 @@
+name : 11 - Working with Inputs
+on :
+  workflow_dispatch : 
+    inputs : 
+      dry_run : 
+        type : boolean
+        default : false 
+        description : "Skip deployment and only print build output"
+      target : 
+        required : true
+        type : environment
+        description : "Which environment the workflow will target"
+      tag : 
+        type : choice
+        options : [v1, v2, v3]
+        default : v3
+        description: "Release from which to build and deploy"
+
+jobs :
+  build : 
+    runs-on : ubuntu-latest
+    environment : ${{inputs.target}}
+    steps : 
+      - name : Build 
+        run : echo "Linting and building project ->  ${{inputs.target}}"
