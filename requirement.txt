@@ -1,0 +1,12 @@
+fastapi
+uvicorn[standard]
+email-validator
+langchain
+langgraph
+langchain_core
+langchain_groq
+faiss_cpu
+langchain_community
+streamlit
+tavily_python
+
